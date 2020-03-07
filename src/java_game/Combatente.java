@@ -2,7 +2,7 @@ package java_game;
 
 public class Combatente {
 
-	int vida = 100;
+	private int vida = 100;
 	String nome;
 
 	public Combatente(String nome) {
@@ -19,5 +19,6 @@ public class Combatente {
 
 	public void receberAtaque(double dano) {
 		vida -= dano;
+		System.out.println("Vida atual é " + vida);
 	}
 }

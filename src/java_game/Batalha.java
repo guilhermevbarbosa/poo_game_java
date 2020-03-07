@@ -3,21 +3,21 @@ package java_game;
 import java.util.Random;
 
 public class Batalha {
-	Random rand = new Random();
-	Combatente[] jogadores = new Combatente[2];
+	private Random rand = new Random();
+	private Combatente[] jogadores = new Combatente[2];
 
 	public Batalha(Combatente jogador1, Combatente jogador2) {
 		jogadores[0] = jogador1;
 		jogadores[1] = jogador2;
 	}
 
-	public int sorteiaAtaque(int valor) {
+	private int sorteiaAtaque(int valor) {
 		int ataque = rand.nextInt(valor);
 
 		return ataque;
 	}
 
-	public Combatente sorteiaJogadores() {
+	private Combatente sorteiaJogadores() {
 		int jogadorSorteado = rand.nextInt(2);
 
 		return jogadores[jogadorSorteado];
@@ -28,9 +28,8 @@ public class Batalha {
 			Combatente selecionado = sorteiaJogadores();
 			int valorAtaque = sorteiaAtaque(10);
 
+			System.out.println(selecionado.nome + " recebeu " + valorAtaque + " de dano");
 			selecionado.receberAtaque(valorAtaque);
-
-			System.out.println(selecionado.nome + " recebeu " + valorAtaque + " de dano e agora tem " + selecionado.vida + " de vida.");
 		}
 
 		if (!jogadores[0].estaVivo()) {
