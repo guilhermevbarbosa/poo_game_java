@@ -9,7 +9,7 @@ public class Combatente {
 		this.nome = nome;
 	}
 
-	public boolean estaVivo(int vida) {
+	public boolean estaVivo() {
 		if (vida > 0) {
 			return true;
 		}
