@@ -1,9 +1,9 @@
 package java_game;
 
-public class Combatente {
+public abstract class Combatente {
 
 	private int vida = 100;
-	String nome;
+	private String nome;
 
 	public Combatente(String nome) {
 		this.nome = nome;
@@ -17,8 +17,17 @@ public class Combatente {
 		return false;
 	}
 
-	public void receberAtaque(double dano) {
+	public int receberAtaque(double dano) {
 		vida -= dano;
-		System.out.println("Vida atual é " + vida);
+
+		return vida;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+
+	public int getVidaAtual() {
+		return this.vida;
 	}
 }

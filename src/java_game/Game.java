@@ -1,8 +1,10 @@
 package java_game;
 
+import senac.game.batalhas.Batalha;
+
 public class Game {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Combatente player1 = new OrcDoDeserto("OrcPlayer");
 		Combatente player2 = new Dragao("DragaoPlayer");
 
