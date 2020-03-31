@@ -9,7 +9,8 @@ public class Game {
 		Combatente player2 = new Dragao("DragaoPlayer");
 
 		Batalha batalha = new Batalha(player1, player2);
-		System.out.println(batalha.Batalhar());
+		Combatente vencedor = batalha.Batalhar();
+		System.out.println("O vencedor é " + vencedor.getNome());
 	}
 
 }
