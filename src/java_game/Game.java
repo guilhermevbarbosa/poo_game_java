@@ -1,6 +1,8 @@
 package java_game;
 
 import senac.game.batalhas.Batalha;
+import senac.game.inimigos.Dragao;
+import senac.game.inimigos.OrcDoDeserto;
 
 public class Game {
 
