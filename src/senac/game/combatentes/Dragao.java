@@ -1,7 +1,7 @@
 package senac.game.combatentes;
 
 public class Dragao extends Combatente{
-	public Dragao(String nome) {
-		super(nome, 8, 120);
+	public Dragao(String nome, int vida) {
+		super(nome, 18, vida);
 	}
 }
