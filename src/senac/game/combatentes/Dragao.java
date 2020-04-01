@@ -1,9 +1,7 @@
-package senac.game.inimigos;
-
-import java_game.Combatente;
+package senac.game.combatentes;
 
 public class Dragao extends Combatente{
 	public Dragao(String nome) {
-		super(nome);
+		super(nome, 8, 120);
 	}
 }

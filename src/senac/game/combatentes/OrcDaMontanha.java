@@ -1,9 +1,7 @@
-package senac.game.inimigos;
-
-import java_game.Combatente;
+package senac.game.combatentes;
 
 public class OrcDaMontanha extends Combatente {
 	public OrcDaMontanha(String nome) {
-		super(nome);
+		super(nome, 15, 80);
 	}
 }

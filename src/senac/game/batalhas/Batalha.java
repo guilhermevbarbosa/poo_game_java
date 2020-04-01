@@ -1,7 +1,8 @@
 package senac.game.batalhas;
 
-import java_game.Combatente;
 import java.util.Random;
+
+import senac.game.combatentes.Combatente;
 
 public class Batalha {
 	private Random rand = new Random();
@@ -25,9 +26,10 @@ public class Batalha {
 	}
 
 	public Combatente Batalhar() throws InterruptedException {
+		
 		while (jogador[0].estaVivo() && jogador[1].estaVivo()) {
 			Combatente selecionado = sorteiaJogadores();
-			int valorAtaque = sorteiaAtaque(10);
+			int valorAtaque = sorteiaAtaque(selecionado.getForca());
 
 			System.out.println(selecionado.getNome() + " recebeu " + valorAtaque + " de dano");
 			selecionado.receberAtaque(valorAtaque);

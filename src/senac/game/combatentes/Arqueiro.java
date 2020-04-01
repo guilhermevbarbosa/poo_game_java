@@ -1,9 +1,7 @@
-package senac.game.inimigos;
-
-import java_game.Combatente;
+package senac.game.combatentes;
 
 public class Arqueiro extends Combatente{
 	public Arqueiro(String nome) {
-		super(nome);
+		super(nome, 10, 100);
 	}
 }
