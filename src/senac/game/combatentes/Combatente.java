@@ -1,12 +1,13 @@
 package senac.game.combatentes;
+
 import java.util.Random;
 
 public abstract class Combatente {
-	
+
 	protected Random rand = new Random();
-	private int vida;
-	private int forca;
-	private String nome;
+	protected int vida;
+	protected int forca;
+	protected String nome;
 
 	public Combatente(String nome, int forca, int vida) {
 		this.nome = nome;
@@ -22,15 +23,14 @@ public abstract class Combatente {
 		return false;
 	}
 
-	public int receberAtaque(double dano) {
+	public void receberAtaque(double dano) {
 
 		if (dano > vida) {
 			vida = 0;
 		} else {
 			vida -= dano;
 		}
-
-		return vida;
+		
 	}
 
 	public String getNome() {
@@ -40,7 +40,7 @@ public abstract class Combatente {
 	public int getVidaAtual() {
 		return this.vida;
 	}
-	
+
 	public int getForca() {
 		return this.forca;
 	}
