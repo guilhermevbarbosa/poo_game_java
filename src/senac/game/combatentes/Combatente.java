@@ -25,12 +25,20 @@ public abstract class Combatente {
 
 	public void receberAtaque(double dano) {
 
-		if (dano > vida) {
-			vida = 0;
+		if (desviaAtaque()) {
+			System.out.println(this.nome + " desviou do ataque.");
 		} else {
-			vida -= dano;
+			if (dano > vida) {
+				vida = 0;
+			} else {
+				vida -= dano;
+			}
 		}
-		
+
+	}
+
+	protected boolean desviaAtaque() {
+		return false;
 	}
 
 	public String getNome() {
