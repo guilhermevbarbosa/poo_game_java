@@ -2,8 +2,8 @@ package senac.game.combatentes;
 
 public class Morcego extends Combatente implements SerVoador {
 
-	public Morcego(String nome) {
-		super(nome, 10, 70);
+	public Morcego() {
+		super("Morcego", 10, 70);
 	}
 
 	@Override

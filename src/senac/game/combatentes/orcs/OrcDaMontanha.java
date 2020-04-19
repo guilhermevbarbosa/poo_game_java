@@ -3,7 +3,7 @@ package senac.game.combatentes.orcs;
 import senac.game.combatentes.Orc;
 
 public class OrcDaMontanha extends Orc {
-	public OrcDaMontanha(String nome) {
-		super(nome, 15);
+	public OrcDaMontanha() {
+		super("Orc da Montanha", 15);
 	}
 }
