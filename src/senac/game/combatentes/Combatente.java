@@ -1,10 +1,7 @@
 package senac.game.combatentes;
 
-import java.util.Random;
-
 public abstract class Combatente {
 
-	protected Random rand = new Random();
 	protected int vida;
 	protected int forca;
 	protected String nome;

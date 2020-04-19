@@ -1,4 +1,4 @@
-package factories;
+package senac.game.factories;
 
 import senac.game.combatentes.*;
 import senac.game.combatentes.dragoes.*;

@@ -1,7 +1,6 @@
 package senac.game.batalhas;
 
 import java.util.Random;
-
 import senac.game.combatentes.Combatente;
 
 public class Batalha {
