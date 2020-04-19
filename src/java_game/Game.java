@@ -14,8 +14,9 @@ public class Game {
 
 		List<Combatente> deckJ1 = inputGameSelect.inputJogador(1);
 		List<Combatente> deckJ2 = inputGameSelect.inputJogador(2);
-//
-//		Batalha batalha = new Batalha(player1, player2);
+
+		Batalha batalha = new Batalha(deckJ1, deckJ2);
+		batalha.Batalhar();
 //		Combatente vencedor = batalha.Batalhar();
 //		System.out.println("O vencedor é " + vencedor.getNome());
 	}

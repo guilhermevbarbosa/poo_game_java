@@ -1,15 +1,17 @@
 package senac.game.batalhas;
 
+import java.util.List;
 import java.util.Random;
 import senac.game.combatentes.Combatente;
 
 public class Batalha {
 	private Random rand = new Random();
-	private Combatente[] jogador = new Combatente[2];
+	private List<Combatente> deckJ1;
+	private List<Combatente> deckJ2;
 
-	public Batalha(Combatente jogador1, Combatente jogador2) {
-		jogador[0] = jogador1;
-		jogador[1] = jogador2;
+	public Batalha(List<Combatente> deckJ1, List<Combatente> deckJ2) {
+		this.deckJ1 = deckJ1;
+		this.deckJ2 = deckJ2;
 	}
 
 	private int sorteiaAtaque(int valor) {
@@ -18,37 +20,76 @@ public class Batalha {
 		return ataque;
 	}
 
-	private Combatente sorteiaJogadores() {
+	private int sorteiaJogadores() {
 		int jogadorSorteado = rand.nextInt(2);
 
-		return jogador[jogadorSorteado];
+		return jogadorSorteado;
 	}
 
-	public Combatente Batalhar() throws InterruptedException {
-		
-		while (jogador[0].estaVivo() && jogador[1].estaVivo()) {
-			Combatente selecionado = sorteiaJogadores();
-			int valorAtaque = sorteiaAtaque(selecionado.getForca());
+	public void Batalhar() throws InterruptedException {
+		int selecionado = sorteiaJogadores();
 
-			System.out.println(selecionado.getNome() + " recebeu " + valorAtaque + " de dano");
-			selecionado.receberAtaque(valorAtaque);
+		if (selecionado == 1) {
+//			JOGADOR 1
+			System.out.print("Jogador 1 selecione o combatente para batalhar");
+			System.out.print("\n");
 
-			System.out.println("A vida de " + jogador[0].getNome() + " é " + jogador[0].getVidaAtual());
-			System.out.println("A vida de " + jogador[1].getNome() + " é " + jogador[1].getVidaAtual());
+			for (Combatente item : deckJ1) {
+				System.out.println(item.getNome() + " - " + item.getVidaAtual());
+			}
+//			JOGADOR 1
 
-			Thread.sleep(1000);
-			System.out.println("\n");
-		}
+//			JOGADOR 2
+			System.out.print("Jogador 2 selecione o combatente para batalhar");
+			System.out.print("\n");
 
-		return getVencedor();
-	}
-
-	private Combatente getVencedor() {
-		if (jogador[0].estaVivo()) {
-			return jogador[0];
+			for (Combatente item : deckJ2) {
+				System.out.println(item.getNome() + " - " + item.getVidaAtual());
+			}
+//			JOGADOR 2
 		} else {
-			return jogador[1];
+//			JOGADOR 2
+			System.out.print("Jogador 2 selecione o combatente para batalhar");
+			System.out.print("\n");
+
+			for (Combatente item : deckJ2) {
+				System.out.println(item.getNome() + " - " + item.getVidaAtual());
+			}
+//			JOGADOR 2
+			
+//			JOGADOR 1
+			System.out.print("Jogador 1 selecione o combatente para batalhar");
+			System.out.print("\n");
+
+			for (Combatente item : deckJ1) {
+				System.out.println(item.getNome() + " - " + item.getVidaAtual());
+			}
+//			JOGADOR 1		
 		}
+
+//		while (jogador[0].estaVivo() && jogador[1].estaVivo()) {
+//			Combatente selecionado = sorteiaJogadores();
+//			int valorAtaque = sorteiaAtaque(selecionado.getForca());
+//
+//			System.out.println(selecionado.getNome() + " recebeu " + valorAtaque + " de dano");
+//			selecionado.receberAtaque(valorAtaque);
+//
+//			System.out.println("A vida de " + jogador[0].getNome() + " é " + jogador[0].getVidaAtual());
+//			System.out.println("A vida de " + jogador[1].getNome() + " é " + jogador[1].getVidaAtual());
+//
+//			Thread.sleep(1000);
+//			System.out.println("\n");
+//		}
+//
+//		return getVencedor();
 	}
+
+//	private Combatente getVencedor() {
+//		if (jogador[0].estaVivo()) {
+//			return jogador[0];
+//		} else {
+//			return jogador[1];
+//		}
+//	}
 
 }
