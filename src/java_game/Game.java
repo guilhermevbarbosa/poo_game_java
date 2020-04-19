@@ -1,6 +1,6 @@
 package java_game;
 
-import java.util.List;
+import java.util.Map;
 
 import senac.game.batalhas.Batalha;
 import senac.game.combatentes.*;
@@ -12,8 +12,8 @@ public class Game {
 		
 		InputGameSelect inputGameSelect = new InputGameSelect();
 
-		List<Combatente> deckJ1 = inputGameSelect.inputJogador(1);
-		List<Combatente> deckJ2 = inputGameSelect.inputJogador(2);
+		Map<Integer, Combatente> deckJ1 = inputGameSelect.inputSelecionarDeck(1);
+		Map<Integer, Combatente> deckJ2 = inputGameSelect.inputSelecionarDeck(2);
 
 		Batalha batalha = new Batalha(deckJ1, deckJ2);
 		batalha.Batalhar();
