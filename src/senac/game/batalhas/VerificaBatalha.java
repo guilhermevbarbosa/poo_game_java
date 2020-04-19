@@ -7,8 +7,12 @@ public class VerificaBatalha {
 
 	SorteiosBatalha sorteiosBatalha = new SorteiosBatalha();
 
+//	Realiza a batalha enquanto a classe Batalha solicitar
 	public Combatente batalhar(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
+		
+//		Se o sorteado for 1 começa por ele, se não começa pelo 2
 		if (sorteado == 1) {
+//			valorAtaque recebe o sorteio da força do ataque de acordo com o sorteio da força de quem vai atacar
 			int valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente1.getForca());
 
 			System.out.println(combatente2.getNome() + " recebeu " + valorAtaque + " de dano");
