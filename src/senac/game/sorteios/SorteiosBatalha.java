@@ -15,7 +15,9 @@ public class SorteiosBatalha {
 		int jogadorSorteado = rand.nextInt(2);
 		
 		if(jogadorSorteado == 0 ) {
-			jogadorSorteado++;
+			jogadorSorteado = 1;
+		}else {
+			jogadorSorteado = 2;
 		}
 
 		return jogadorSorteado;

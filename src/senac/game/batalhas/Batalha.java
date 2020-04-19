@@ -30,6 +30,7 @@ public class Batalha {
 		while (selecionadoJ1.estaVivo() && selecionadoJ2.estaVivo()) {
 
 			int sorteioJogador = sorteiosBatalha.sorteiaJogadores();
+			System.out.println(sorteioJogador);
 
 			if (sorteioJogador == 1) {
 				int valorAtaque = sorteiosBatalha.sorteiaAtaque(selecionadoJ1.getForca());
