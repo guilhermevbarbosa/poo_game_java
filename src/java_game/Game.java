@@ -12,6 +12,7 @@ public class Game {
 
 	public static void main(String[] args) throws InterruptedException {
 
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 
 		List<Combatente> deckFormadoP1 = new ArrayList<Combatente>();
@@ -19,37 +20,41 @@ public class Game {
 
 		CombatenteFactory combatenteFactory = new CombatenteFactory();
 
-		int j1 = 0;
-		int j2 = 0;
+		int countJ1 = 0;
+		int countJ2 = 0;
 
-		while (j1 < 4) {
+		while (countJ1 < 4) {
 			System.out.print("Jogador 1 selecione 4 combatentes para montar o seu deck");
-			System.out.println(
-					"(1) Arqueiro, (2) Morcego, (3) Blood Dragon, (4) Elder Dragon, (5) Orc da Montanha (6) Orc do Deserto");
+			System.out.print("\n");
+
+			System.out.println("(1) Arqueiro\n"
+					+ "(2) Morcego\n"
+					+ "(3) Blood Dragon\n"
+					+ "(4) Elder Dragon\n"
+					+ "(5) Orc da Montanha\n"
+					+ "(6) Orc do Deserto");
 
 			int valor = scanner.nextInt();
 			Combatente combatente = combatenteFactory.selecionarCombatente(valor);
 			deckFormadoP1.add(combatente);
-			j1++;
+			countJ1++;
 		}
 
-		for (Combatente item : deckFormadoP1) {
-			System.out.println(item);
-		}
-		
-		while (j2 < 4) {
+		while (countJ2 < 4) {
 			System.out.print("Jogador 2 selecione 4 combatentes para montar o seu deck");
-			System.out.println(
-					"(1) Arqueiro, (2) Morcego, (3) Blood Dragon, (4) Elder Dragon, (5) Orc da Montanha (6) Orc do Deserto");
+			System.out.print("\n");
+
+			System.out.println("(1) Arqueiro\n"
+					+ "(2) Morcego\n"
+					+ "(3) Blood Dragon\n"
+					+ "(4) Elder Dragon\n"
+					+ "(5) Orc da Montanha\n"
+					+ "(6) Orc do Deserto");
 
 			int valor = scanner.nextInt();
 			Combatente combatente = combatenteFactory.selecionarCombatente(valor);
 			deckFormadoP2.add(combatente);
-			j2++;
-		}
-		
-		for (Combatente item : deckFormadoP2) {
-			System.out.println(item);
+			countJ2++;
 		}
 
 //		Combatente player1 = new BloodDragon();
