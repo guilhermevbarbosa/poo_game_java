@@ -58,4 +58,16 @@ public class InputGameSelect {
 		int combatenteSelecionado = scanner.nextInt();
 		return combatenteSelecionado;
 	}
+
+	public int contaVivos(Map<Integer, Combatente> deck) {
+		int countVivos = 0;
+
+		for (Map.Entry<Integer, Combatente> item : deck.entrySet()) {
+			if (item.getValue().estaVivo()) {
+				countVivos++;
+			}
+		}
+
+		return countVivos;
+	}
 }

@@ -24,24 +24,28 @@ public class Batalha {
 	}
 
 	public void Batalhar() throws InterruptedException {
-//		Passa o Deck 1 e 2 já completo para o input de escolha de combatente
-		combatenteSelecionado1 = inputGameSelect.inputSelecionarCombatente(1, deckJ1);
-		combatenteSelecionado2 = inputGameSelect.inputSelecionarCombatente(2, deckJ2);
 
-//		Pega  retorno da seleção do usuario qual combate ele quer usar e dá um get do combatente
-		Combatente selecionadoJ1 = deckJ1.get(combatenteSelecionado1);
-		Combatente selecionadoJ2 = deckJ2.get(combatenteSelecionado2);
+		while (inputGameSelect.contaVivos(deckJ1) > 0 && inputGameSelect.contaVivos(deckJ2) > 0) {
+//			Passa o Deck 1 e 2 já completo para o input de escolha de combatente
+			combatenteSelecionado1 = inputGameSelect.inputSelecionarCombatente(1, deckJ1);
+			combatenteSelecionado2 = inputGameSelect.inputSelecionarCombatente(2, deckJ2);
 
-		while (selecionadoJ1.estaVivo() && selecionadoJ2.estaVivo()) {
-//			Sorteia qual jogador ataca primeiro em cada rodada
-			int sorteioJogador = sorteiosBatalha.sorteiaJogadores();
-			
-//			Passa o jogador sorteado e os dois selecionados para a classe do combate que esta acontencendo
-			vencedor = verificaBatalha.batalhar(sorteioJogador, selecionadoJ1, selecionadoJ2);
+//			Pega  retorno da seleção do usuario qual combate ele quer usar e dá um get do combatente
+			Combatente selecionadoJ1 = deckJ1.get(combatenteSelecionado1);
+			Combatente selecionadoJ2 = deckJ2.get(combatenteSelecionado2);
+
+			while (selecionadoJ1.estaVivo() && selecionadoJ2.estaVivo()) {
+//				Sorteia qual jogador ataca primeiro em cada rodada
+				int sorteioJogador = sorteiosBatalha.sorteiaJogadores();
+
+//				Passa o jogador sorteado e os dois selecionados para a classe do combate que esta acontencendo
+				vencedor = verificaBatalha.batalhar(sorteioJogador, selecionadoJ1, selecionadoJ2);
+			}
+
+//			Quando acaba aquela batalha exibe o vencedor
+			System.out.println(
+					"O ganhador da batalha foi " + vencedor.getNome() + " com vida de " + vencedor.getVidaAtual());
 		}
-		
-//		Quando acaba aquela batalha exibe o vencedor
-		System.out.println("O ganhador da batalha foi " + vencedor.getNome() + " com vida de " + vencedor.getVidaAtual());
 	}
 
 }
