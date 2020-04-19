@@ -11,13 +11,13 @@ public class InputGameSelect {
 
 	CombatenteFactory combatenteFactory = new CombatenteFactory();
 	Scanner scanner = new Scanner(System.in);
-	
-	List<Combatente> deckFormado1 = new ArrayList<Combatente>();
-	List<Combatente> deckFormado2 = new ArrayList<Combatente>();
+
+	List<Combatente> deckFormado = new ArrayList<Combatente>();
 
 	public List<Combatente> inputJogador(int p) {
 		int countJ = 0;
-		
+		deckFormado = new ArrayList<Combatente>();
+
 		while (countJ < 4) {
 			System.out.print("Jogador " + p + " selecione 4 combatentes para montar o seu deck");
 			System.out.print("\n");
@@ -27,21 +27,12 @@ public class InputGameSelect {
 
 			int valor = scanner.nextInt();
 			Combatente combatente = combatenteFactory.selecionarCombatente(valor);
-			
-			if(p == 1) {
-				deckFormado1.add(combatente);				
-			}else {
-				deckFormado2.add(combatente);
-			}
-			
+
+			deckFormado.add(combatente);
+
 			countJ++;
 		}
-		
-		if(p == 1) {			
-			return deckFormado1;
-		}else {
-			return deckFormado2;
-		}
 
+		return deckFormado;
 	}
 }
