@@ -35,56 +35,19 @@ public class InputGameSelect {
 		return deckFormado;
 	}
 
-	public void inputSelecionarCombatente(int jogador, Map<Integer, Combatente> deckJ1,
-			Map<Integer, Combatente> deckJ2) {
-		if (jogador == 1) {
-//			JOGADOR 1
-			System.out.print("Jogador 1 selecione o combatente para batalhar");
+	public int inputSelecionarCombatente(int jogador, Map<Integer, Combatente> deck) {
+
+			System.out.print("Jogador " + jogador + " selecione o combatente para batalhar");
 			System.out.print("\n");
 
-			for (Map.Entry<Integer, Combatente> item : deckJ1.entrySet()) {
+			for (Map.Entry<Integer, Combatente> item : deck.entrySet()) {
 				if (item.getValue().estaVivo()) {
 					System.out.println(item.getKey() + " - " + item.getValue().getNome() + " - Saúde: "
 							+ item.getValue().getVidaAtual() + " - Força: " + item.getValue().getForca());
 				}
 			}
-//			JOGADOR 1
 
-//			JOGADOR 2
-			System.out.print("Jogador 2 selecione o combatente para batalhar");
-			System.out.print("\n");
-
-			for (Map.Entry<Integer, Combatente> item : deckJ2.entrySet()) {
-				if (item.getValue().estaVivo()) {
-					System.out.println(item.getKey() + " - " + item.getValue().getNome() + " - Saúde: "
-							+ item.getValue().getVidaAtual() + " - Força: " + item.getValue().getForca());
-				}
-			}
-//			JOGADOR 2
-		} else {
-//			JOGADOR 2
-			System.out.print("Jogador 2 selecione o combatente para batalhar");
-			System.out.print("\n");
-
-			for (Map.Entry<Integer, Combatente> item : deckJ2.entrySet()) {
-				if (item.getValue().estaVivo()) {
-					System.out.println(item.getKey() + " - " + item.getValue().getNome() + " - Saúde: "
-							+ item.getValue().getVidaAtual() + " - Força: " + item.getValue().getForca());
-				}
-			}
-//			JOGADOR 2
-
-//			JOGADOR 1
-			System.out.print("Jogador 1 selecione o combatente para batalhar");
-			System.out.print("\n");
-
-			for (Map.Entry<Integer, Combatente> item : deckJ1.entrySet()) {
-				if (item.getValue().estaVivo()) {
-					System.out.println(item.getKey() + " - " + item.getValue().getNome() + " - Saúde: "
-							+ item.getValue().getVidaAtual() + " - Força: " + item.getValue().getForca());
-				}
-			}
-//			JOGADOR 1
-		}
+			int combatenteSelecionado = scanner.nextInt();
+			return combatenteSelecionado;
 	}
 }
