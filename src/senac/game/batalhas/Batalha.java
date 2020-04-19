@@ -9,12 +9,13 @@ public class Batalha {
 	InputGameSelect inputGameSelect = new InputGameSelect();
 	SorteiosBatalha sorteiosBatalha = new SorteiosBatalha();
 	VerificaBatalha verificaBatalha = new VerificaBatalha();
-	
+
 	private Map<Integer, Combatente> deckJ1;
 	private Map<Integer, Combatente> deckJ2;
 
 	private int combatenteSelecionado1;
 	private int combatenteSelecionado2;
+	Combatente vencedor;
 
 	public Batalha(Map<Integer, Combatente> deckJ1, Map<Integer, Combatente> deckJ2) {
 		this.deckJ1 = deckJ1;
@@ -30,8 +31,10 @@ public class Batalha {
 
 		while (selecionadoJ1.estaVivo() && selecionadoJ2.estaVivo()) {
 			int sorteioJogador = sorteiosBatalha.sorteiaJogadores();
-			verificaBatalha.batalhar(sorteioJogador, selecionadoJ1, selecionadoJ2);
+			vencedor = verificaBatalha.batalhar(sorteioJogador, selecionadoJ1, selecionadoJ2);
 		}
+		
+		System.out.println("O ganhador da batalha foi " + vencedor.getNome() + " com vida de " + vencedor.getVidaAtual());
 
 	}
 

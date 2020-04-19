@@ -4,10 +4,10 @@ import senac.game.combatentes.Combatente;
 import senac.game.sorteios.SorteiosBatalha;
 
 public class VerificaBatalha {
-	
+
 	SorteiosBatalha sorteiosBatalha = new SorteiosBatalha();
-	
-	public void batalhar(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
+
+	public Combatente batalhar(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
 		if (sorteado == 1) {
 			int valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente1.getForca());
 
@@ -30,6 +30,16 @@ public class VerificaBatalha {
 
 			Thread.sleep(1000);
 			System.out.println("\n");
+		}
+		
+		return getVencedor(combatente1, combatente2);
+	}
+
+	private Combatente getVencedor(Combatente combatente1, Combatente combatente2) {
+		if (combatente1.estaVivo()) {
+			return combatente1;
+		} else {
+			return combatente2;
 		}
 	}
 }
