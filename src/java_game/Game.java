@@ -12,28 +12,43 @@ public class Game {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		Scanner player1Input = new Scanner(System.in);
-		List<Combatente> deckFormadoP1 = new ArrayList<Combatente>();
+		Scanner scanner = new Scanner(System.in);
 
-		Scanner player2Input = new Scanner(System.in);
+		List<Combatente> deckFormadoP1 = new ArrayList<Combatente>();
 		List<Combatente> deckFormadoP2 = new ArrayList<Combatente>();
 
 		CombatenteFactory combatenteFactory = new CombatenteFactory();
 
 		int j1 = 0;
+		int j2 = 0;
 
-		while (j1 < 5) {
-			System.out.print("Selecione 5 combatentes para montar o seu deck");
+		while (j1 < 4) {
+			System.out.print("Jogador 1 selecione 4 combatentes para montar o seu deck");
 			System.out.println(
 					"(1) Arqueiro, (2) Morcego, (3) Blood Dragon, (4) Elder Dragon, (5) Orc da Montanha (6) Orc do Deserto");
 
-			int valor = player1Input.nextInt();
+			int valor = scanner.nextInt();
 			Combatente combatente = combatenteFactory.selecionarCombatente(valor);
 			deckFormadoP1.add(combatente);
 			j1++;
 		}
 
 		for (Combatente item : deckFormadoP1) {
+			System.out.println(item);
+		}
+		
+		while (j2 < 4) {
+			System.out.print("Jogador 2 selecione 4 combatentes para montar o seu deck");
+			System.out.println(
+					"(1) Arqueiro, (2) Morcego, (3) Blood Dragon, (4) Elder Dragon, (5) Orc da Montanha (6) Orc do Deserto");
+
+			int valor = scanner.nextInt();
+			Combatente combatente = combatenteFactory.selecionarCombatente(valor);
+			deckFormadoP2.add(combatente);
+			j2++;
+		}
+		
+		for (Combatente item : deckFormadoP2) {
 			System.out.println(item);
 		}
 
