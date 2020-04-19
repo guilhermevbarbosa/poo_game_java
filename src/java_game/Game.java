@@ -20,8 +20,6 @@ public class Game {
 //		Manda os dois decks formados pelo usuário para a classe de batalha
 		Batalha batalha = new Batalha(deckJ1, deckJ2);
 		batalha.Batalhar();
-//		Combatente vencedor = batalha.Batalhar();
-//		System.out.println("O vencedor é " + vencedor.getNome());
 	}
 
 }

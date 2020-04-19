@@ -26,6 +26,7 @@ public class Batalha {
 	public void Batalhar() throws InterruptedException {
 
 		while (inputGameSelect.contaVivos(deckJ1) > 0 && inputGameSelect.contaVivos(deckJ2) > 0) {
+
 //			Passa o Deck 1 e 2 já completo para o input de escolha de combatente
 			combatenteSelecionado1 = inputGameSelect.inputSelecionarCombatente(1, deckJ1);
 			combatenteSelecionado2 = inputGameSelect.inputSelecionarCombatente(2, deckJ2);
@@ -43,8 +44,14 @@ public class Batalha {
 			}
 
 //			Quando acaba aquela batalha exibe o vencedor
-			System.out.println(
-					"O ganhador da batalha foi " + vencedor.getNome() + " com vida de " + vencedor.getVidaAtual());
+			System.out.println("O ganhador da batalha foi " + vencedor.getNome() + " com vida de "
+					+ vencedor.getVidaAtual() + "/n");
+		}
+
+		if (inputGameSelect.contaVivos(deckJ1) == 0) {
+			System.out.println("O jogador 2 foi o ganhador da partida");
+		} else {
+			System.out.println("O jogador 1 foi o ganhador da partida");
 		}
 	}
 

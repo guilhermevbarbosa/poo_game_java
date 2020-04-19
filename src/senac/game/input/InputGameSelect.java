@@ -21,7 +21,7 @@ public class InputGameSelect {
 		int countJ = 0;
 		deckFormado = new HashMap<Integer, Combatente>();
 
-		while (countJ < 4) {
+		while (countJ < 3) {
 			System.out.print("Jogador " + p + " selecione 4 combatentes para montar o seu deck");
 			System.out.print("\n");
 
