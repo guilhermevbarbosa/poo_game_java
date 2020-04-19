@@ -1,7 +1,7 @@
 package senac.game.combatentes;
 
 public class Arqueiro extends Combatente{
-	public Arqueiro(String nome) {
-		super(nome, 10, 100);
+	public Arqueiro() {
+		super("Arqueiro", 10, 100);
 	}
 }

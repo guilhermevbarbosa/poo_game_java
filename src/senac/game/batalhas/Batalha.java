@@ -1,54 +1,57 @@
 package senac.game.batalhas;
 
-import java.util.Random;
-
+import java.util.Map;
 import senac.game.combatentes.Combatente;
+import senac.game.input.InputGameSelect;
+import senac.game.sorteios.SorteiosBatalha;
 
 public class Batalha {
-	private Random rand = new Random();
-	private Combatente[] jogador = new Combatente[2];
+	InputGameSelect inputGameSelect = new InputGameSelect();
+	SorteiosBatalha sorteiosBatalha = new SorteiosBatalha();
+	VerificaBatalha verificaBatalha = new VerificaBatalha();
 
-	public Batalha(Combatente jogador1, Combatente jogador2) {
-		jogador[0] = jogador1;
-		jogador[1] = jogador2;
+	private Map<Integer, Combatente> deckJ1;
+	private Map<Integer, Combatente> deckJ2;
+
+	private int combatenteSelecionado1;
+	private int combatenteSelecionado2;
+	Combatente vencedor;
+
+//	Construtor da classe Batalha, recebe da main os Maps dos dois decks já formados pelos jogadores
+	public Batalha(Map<Integer, Combatente> deckJ1, Map<Integer, Combatente> deckJ2) {
+		this.deckJ1 = deckJ1;
+		this.deckJ2 = deckJ2;
 	}
 
-	private int sorteiaAtaque(int valor) {
-		int ataque = rand.nextInt(valor);
+	public void Batalhar() throws InterruptedException {
 
-		return ataque;
-	}
+		while (inputGameSelect.contaVivos(deckJ1) > 0 && inputGameSelect.contaVivos(deckJ2) > 0) {
 
-	private Combatente sorteiaJogadores() {
-		int jogadorSorteado = rand.nextInt(2);
+//			Passa o Deck 1 e 2 já completo para o input de escolha de combatente
+			combatenteSelecionado1 = inputGameSelect.inputSelecionarCombatente(1, deckJ1);
+			combatenteSelecionado2 = inputGameSelect.inputSelecionarCombatente(2, deckJ2);
 
-		return jogador[jogadorSorteado];
-	}
+//			Pega  retorno da seleção do usuario qual combate ele quer usar e dá um get do combatente
+			Combatente selecionadoJ1 = deckJ1.get(combatenteSelecionado1);
+			Combatente selecionadoJ2 = deckJ2.get(combatenteSelecionado2);
 
-	public Combatente Batalhar() throws InterruptedException {
-		
-		while (jogador[0].estaVivo() && jogador[1].estaVivo()) {
-			Combatente selecionado = sorteiaJogadores();
-			int valorAtaque = sorteiaAtaque(selecionado.getForca());
+			while (selecionadoJ1.estaVivo() && selecionadoJ2.estaVivo()) {
+//				Sorteia qual jogador ataca primeiro em cada rodada
+				int sorteioJogador = sorteiosBatalha.sorteiaJogadores();
 
-			System.out.println(selecionado.getNome() + " recebeu " + valorAtaque + " de dano");
-			selecionado.receberAtaque(valorAtaque);
+//				Passa o jogador sorteado e os dois selecionados para a classe do combate que esta acontencendo
+				vencedor = verificaBatalha.batalhar(sorteioJogador, selecionadoJ1, selecionadoJ2);
+			}
 
-			System.out.println("A vida de " + jogador[0].getNome() + " é " + jogador[0].getVidaAtual());
-			System.out.println("A vida de " + jogador[1].getNome() + " é " + jogador[1].getVidaAtual());
-
-			Thread.sleep(1000);
-			System.out.println("\n");
+//			Quando acaba aquela batalha exibe o vencedor
+			System.out.println("O ganhador da batalha foi " + vencedor.getNome() + " com vida de "
+					+ vencedor.getVidaAtual() + "/n");
 		}
 
-		return getVencedor();
-	}
-
-	private Combatente getVencedor() {
-		if (jogador[0].estaVivo()) {
-			return jogador[0];
+		if (inputGameSelect.contaVivos(deckJ1) == 0) {
+			System.out.println("O jogador 2 foi o ganhador da partida");
 		} else {
-			return jogador[1];
+			System.out.println("O jogador 1 foi o ganhador da partida");
 		}
 	}
 
