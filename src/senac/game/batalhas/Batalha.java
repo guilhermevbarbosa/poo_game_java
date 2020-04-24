@@ -45,7 +45,7 @@ public class Batalha {
 
 //			Quando acaba aquela batalha exibe o vencedor
 			System.out.println("O ganhador da batalha foi " + vencedor.getNome() + " com vida de "
-					+ vencedor.getVidaAtual() + "/n");
+					+ vencedor.getVidaAtual());
 		}
 
 		if (inputGameSelect.contaVivos(deckJ1) == 0) {
