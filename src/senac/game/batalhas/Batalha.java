@@ -34,7 +34,7 @@ public class Batalha {
 //			Pega  retorno da seleção do usuario qual combate ele quer usar e dá um get do combatente
 			Combatente selecionadoJ1 = deckJ1.get(combatenteSelecionado1);
 			Combatente selecionadoJ2 = deckJ2.get(combatenteSelecionado2);
-
+			
 			while (selecionadoJ1.estaVivo() && selecionadoJ2.estaVivo()) {
 //				Sorteia qual jogador ataca primeiro em cada rodada
 				int sorteioJogador = sorteiosBatalha.sorteiaJogadores();
