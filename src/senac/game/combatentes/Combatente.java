@@ -5,11 +5,18 @@ public abstract class Combatente {
 	protected String nome;
 	protected int forca;
 	protected int vida;
+	
+	protected int defesa; 
+	
+//	FOGO / NORMAL / GELO / VENENO / FANTASMA
+	protected String tipo;
 
-	public Combatente(String nome, int forca, int vida) {
+	public Combatente(String nome, int forca, int vida, int defesa, String tipo) {
 		this.nome = nome;
 		this.forca = forca;
 		this.vida = vida;
+		this.defesa = defesa;
+		this.tipo = tipo;
 	}
 
 	public boolean estaVivo() {

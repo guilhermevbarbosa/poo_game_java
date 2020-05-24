@@ -4,6 +4,6 @@ import senac.game.combatentes.Monstro;
 
 public class Centauro extends Monstro {
 	public Centauro() {
-		super("Centauro", 17, 75);
+		super("Centauro", 17, 75, "Normal");
 	}
 }

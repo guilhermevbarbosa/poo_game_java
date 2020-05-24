@@ -4,6 +4,6 @@ import senac.game.combatentes.Humano;
 
 public class Guerreiro extends Humano {
 	public Guerreiro() {
-		super("Guerreiro", 20, 85);
+		super("Guerreiro", 20, 85, "Normal");
 	}
 }

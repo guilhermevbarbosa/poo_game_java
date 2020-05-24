@@ -5,7 +5,7 @@ import senac.game.combatentes.Morcego;
 
 public class MorcegoDeGelo extends Morcego implements Habilidades {
 	public MorcegoDeGelo() {
-		super("Morcego de Gelo", 12, 75);
+		super("Morcego de Gelo", 12, 75, "Gelo");
 	}
 	
 	@Override

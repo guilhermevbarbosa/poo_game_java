@@ -4,6 +4,6 @@ import senac.game.combatentes.Monstro;
 
 public class Lobisomem extends Monstro {
 	public Lobisomem() {
-		super("Lobisomem", 18, 110);
+		super("Lobisomem", 18, 110, "Normal");
 	}
 }
