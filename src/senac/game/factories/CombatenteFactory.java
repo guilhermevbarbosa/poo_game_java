@@ -3,6 +3,12 @@ package senac.game.factories;
 import senac.game.combatentes.*;
 import senac.game.combatentes.dragoes.*;
 import senac.game.combatentes.humanos.*;
+import senac.game.combatentes.monstros.Centauro;
+import senac.game.combatentes.monstros.Espectro;
+import senac.game.combatentes.monstros.Ghoul;
+import senac.game.combatentes.monstros.Lobisomem;
+import senac.game.combatentes.monstros.Minotauro;
+import senac.game.combatentes.monstros.Wendigo;
 import senac.game.combatentes.orcs.*;
 import senac.game.combatentes.morcegos.*;
 
@@ -25,6 +31,14 @@ public class CombatenteFactory {
 		deckMap.put(10, new Guerreiro());
 		deckMap.put(11, new SuperMorcego());
 		deckMap.put(12, new SuperOrc());
+		deckMap.put(13, new Campones());
+		deckMap.put(14, new Ladrao());
+		deckMap.put(15, new Wendigo());
+		deckMap.put(16, new Lobisomem());
+		deckMap.put(17, new Ghoul());
+		deckMap.put(18, new Espectro());
+		deckMap.put(19, new Centauro());
+		deckMap.put(20, new Minotauro());
 	}
 
 	public Combatente selecionarCombatente(int valor) {
