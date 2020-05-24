@@ -6,7 +6,6 @@ public class Arqueiro extends Combatente{
 	
 	public Arqueiro() {
 		super("Arqueiro", 10, 100);
-		this.hash = this.hashCode();
 	}
 	
 }

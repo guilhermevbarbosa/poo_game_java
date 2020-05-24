@@ -31,7 +31,7 @@ public class Batalha {
 			combatenteSelecionado1 = inputGameSelect.inputSelecionarCombatente(1, deckJ1);
 			combatenteSelecionado2 = inputGameSelect.inputSelecionarCombatente(2, deckJ2);
 
-//			Pega  retorno da seleção do usuario qual combate ele quer usar e dá um get do combatente
+//			Pega  retorno da seleção do usuario qual combatente ele quer usar e dá um get do combatente
 			Combatente selecionadoJ1 = deckJ1.get(combatenteSelecionado1);
 			Combatente selecionadoJ2 = deckJ2.get(combatenteSelecionado2);
 			
@@ -39,15 +39,16 @@ public class Batalha {
 //				Sorteia qual jogador ataca primeiro em cada rodada
 				int sorteioJogador = sorteiosBatalha.sorteiaJogadores();
 
-//				Passa o jogador sorteado e os dois selecionados para a classe do combate que esta acontencendo
+//				Passa o jogador sorteado e os dois selecionados para a classe do combate que esta acontecendo
 				vencedor = verificaBatalha.batalhar(sorteioJogador, selecionadoJ1, selecionadoJ2);
 			}
 
 //			Quando acaba aquela batalha exibe o vencedor
-			System.out.println("O ganhador da batalha foi " + vencedor.getNome() + " com vida de "
-					+ vencedor.getVidaAtual());
+			System.out.println(
+					"O ganhador da batalha foi " + vencedor.getNome() + " com vida de " + vencedor.getVidaAtual());
 		}
 
+//		Verifica o deck inteiro dos jogadores vendo se ainda há algum vivo
 		if (inputGameSelect.contaVivos(deckJ1) == 0) {
 			System.out.println("O jogador 2 foi o ganhador da partida");
 		} else {

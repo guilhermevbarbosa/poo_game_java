@@ -42,7 +42,7 @@ public class InputGameSelect {
 		return deckFormado;
 	}
 
-//	Método que exibe os combatentes vivos dispoiniveis para a seleção do usuário e pergunta qual ele quer usar na batalha seguinte
+//	Método que exibe os combatentes vivos disponíveis para a seleção do usuário e pergunta qual ele quer usar na batalha seguinte
 	public int inputSelecionarCombatente(int jogador, Map<Integer, Combatente> deck) {
 
 		System.out.print("Jogador " + jogador + " selecione o combatente para batalhar");

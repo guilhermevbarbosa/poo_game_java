@@ -21,7 +21,6 @@ public abstract class Combatente {
 	}
 
 	public void receberAtaque(double dano) {
-
 		if (desviaAtaque()) {
 			System.out.println(this.nome + " desviou do ataque.");
 		} else {
@@ -31,7 +30,6 @@ public abstract class Combatente {
 				vida -= dano;
 			}
 		}
-
 	}
 
 	protected boolean desviaAtaque() {
