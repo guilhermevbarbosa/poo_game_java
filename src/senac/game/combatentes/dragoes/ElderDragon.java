@@ -4,6 +4,6 @@ import senac.game.combatentes.Dragao;
 
 public class ElderDragon extends Dragao {
 	public ElderDragon() {
-		super("Elder Dragon", 200);
+		super("Elder Dragon", 160);
 	}
 }

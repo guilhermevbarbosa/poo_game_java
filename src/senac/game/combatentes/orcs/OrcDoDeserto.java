@@ -4,6 +4,6 @@ import senac.game.combatentes.Orc;
 
 public class OrcDoDeserto extends Orc {
 	public OrcDoDeserto() {
-		super("Orc do Deserto", 10);
+		super("Orc do Deserto", 25);
 	}
 }

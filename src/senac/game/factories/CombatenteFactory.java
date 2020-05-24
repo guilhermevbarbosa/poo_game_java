@@ -22,6 +22,9 @@ public class CombatenteFactory {
 		deckMap.put(7, new OrcDoDeserto());
 		deckMap.put(8, new Bardo());
 		deckMap.put(9, new Ninja());
+		deckMap.put(10, new Guerreiro());
+		deckMap.put(11, new SuperMorcego());
+		deckMap.put(12, new SuperOrc());
 	}
 
 	public Combatente selecionarCombatente(int valor) {

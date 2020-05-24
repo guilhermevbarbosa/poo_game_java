@@ -26,7 +26,7 @@ public class InputGameSelect {
 			System.out.print("\n");
 
 			System.out.print("(1) Arqueiro\n" + "(2) Morcego de Gelo\n" + "(3) Morcego Selvagem\n" + "(4) Blood Dragon\n" + "(5) Elder Dragon\n"
-					+ "(6) Orc da Montanha\n" + "(7) Orc do Deserto\n" + "(8) Bardo\n" + "(9) Ninja\n");
+					+ "(6) Orc da Montanha\n" + "(7) Orc do Deserto\n" + "(8) Bardo\n" + "(9) Ninja\n" + "(10) Guerreiro\n" + "(11) Super Morcego\n" + "(12) Super Orc\n");
 
 //			Capta na próxima linha o Inteiro digitado pelo usuário, esse que determina o combatente selecionado
 			int valor = scanner.nextInt();
