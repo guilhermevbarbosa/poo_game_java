@@ -1,6 +1,6 @@
 package senac.game.combatentes;
 
-public abstract class Dragao extends Combatente implements SerVoador {
+public abstract class Dragao extends Combatente implements Habilidades {
 
 	public Dragao(String nome, int vida) {
 		super(nome, 18, vida);
@@ -8,7 +8,7 @@ public abstract class Dragao extends Combatente implements SerVoador {
 
 	@Override
 	protected boolean desviaAtaque() {
-		return desviaVoador(5);
+		return desviar(5);
 	}
 
 }

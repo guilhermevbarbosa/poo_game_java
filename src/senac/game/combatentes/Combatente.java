@@ -2,9 +2,9 @@ package senac.game.combatentes;
 
 public abstract class Combatente {
 
-	protected int vida;
-	protected int forca;
 	protected String nome;
+	protected int forca;
+	protected int vida;
 
 	public Combatente(String nome, int forca, int vida) {
 		this.nome = nome;

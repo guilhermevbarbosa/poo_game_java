@@ -1,14 +1,14 @@
 package senac.game.combatentes;
 
-public class Morcego extends Combatente implements SerVoador {
+public abstract class Morcego extends Combatente implements Habilidades {
 
-	public Morcego() {
-		super("Morcego", 10, 70);
+	public Morcego(String nome, int ataque, int vida) {
+		super(nome, ataque, vida);
 	}
 
 	@Override
 	protected boolean desviaAtaque() {
-		return desviaVoador(3);
+		return desviar(3);
 	}
 
 }

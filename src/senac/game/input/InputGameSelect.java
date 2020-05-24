@@ -25,8 +25,8 @@ public class InputGameSelect {
 			System.out.print("Jogador " + p + " selecione 5 combatentes para montar o seu deck");
 			System.out.print("\n");
 
-			System.out.println("(1) Arqueiro\n" + "(2) Morcego\n" + "(3) Blood Dragon\n" + "(4) Elder Dragon\n"
-					+ "(5) Orc da Montanha\n" + "(6) Orc do Deserto");
+			System.out.print("(1) Arqueiro\n" + "(2) Morcego de Gelo\n" + "(3) Morcego Selvagem\n" + "(4) Blood Dragon\n" + "(5) Elder Dragon\n"
+					+ "(6) Orc da Montanha\n" + "(7) Orc do Deserto\n" + "(8) Bardo\n" + "(9) Ninja\n");
 
 //			Capta na próxima linha o Inteiro digitado pelo usuário, esse que determina o combatente selecionado
 			int valor = scanner.nextInt();

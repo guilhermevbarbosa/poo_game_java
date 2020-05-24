@@ -2,9 +2,9 @@ package senac.game.combatentes;
 
 import java.util.Random;
 
-public interface SerVoador {
+public interface Habilidades {
 	
-	default boolean desviaVoador(int val) {
+	default boolean desviar(int val) {
 		Random rand = new Random();
 		return rand.nextInt(val) == 1;
 	}
