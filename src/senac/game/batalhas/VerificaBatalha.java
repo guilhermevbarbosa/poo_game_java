@@ -14,7 +14,10 @@ public class VerificaBatalha {
 		return getVencedor(combatente1, combatente2);
 	}
 
-	private void logicaBatalha(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {	
+	private void logicaBatalha(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
+		System.out.println(combatente1.getArma());
+		System.out.println(combatente2.getArma());
+		
 		//		Se o sorteado for 1 começa por ele, se não começa pelo 2
 		if (sorteado == 1) {
 //			valorAtaque recebe o sorteio da força do ataque de acordo com o sorteio da força de quem vai atacar

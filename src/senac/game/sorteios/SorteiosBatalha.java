@@ -32,4 +32,14 @@ public class SorteiosBatalha {
 
 		return jogadorSorteado;
 	}
+
+	public int sorteiaArmasEArmadura() {
+		int armaSorteado = rand.nextInt(20);
+
+		if (armaSorteado == 0) {
+			return armaSorteado = 1;
+		}
+
+		return armaSorteado;
+	}
 }

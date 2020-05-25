@@ -12,6 +12,9 @@ public abstract class Combatente {
 	protected int defesa;
 	protected Tipo tipo;
 
+	protected int forcaOriginal;
+	protected int defesaOriginal;
+
 	Arma arma;
 	Armadura armadura;
 
@@ -21,6 +24,17 @@ public abstract class Combatente {
 		this.vida = vida;
 		this.defesa = defesa;
 		this.tipo = tipo;
+
+		this.forcaOriginal = forca;
+		this.defesaOriginal = defesa;
+	}
+
+	public int getForcaOriginal() {
+		return this.forcaOriginal;
+	}
+
+	public int getDefesaOriginal() {
+		return this.defesaOriginal;
 	}
 
 	public boolean estaVivo() {
@@ -74,11 +88,19 @@ public abstract class Combatente {
 	public void setArmadura(Armadura armadura) {
 		this.armadura = armadura;
 	}
-	
+
 	public Arma getArma() {
 		return this.arma;
 	}
-	
+
+	public Tipo getArmaTipo() {
+		return this.arma.getTipo();
+	}
+
+	public Tipo getArmaduraTipo() {
+		return this.armadura.getTipo();
+	}
+
 	public Armadura getArmadura() {
 		return this.armadura;
 	}
