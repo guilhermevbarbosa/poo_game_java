@@ -55,12 +55,22 @@ public abstract class Combatente {
 	public int getForca() {
 		return this.forca;
 	}
-	
+
 	public int getDefesa() {
 		return this.defesa;
 	}
 
 	public Tipo getTipo() {
 		return this.tipo;
+	}
+
+//	Seta o valor do ataque com o novo valor da arma recebida
+	public void setForcaUpgrade(int forcaPlus) {
+		this.forca = this.forca + forcaPlus;
+	}
+
+//	Seta o valor da armadura com o novo valor da armadura
+	public void setDefesaUpgrade(int defesaPlus) {
+		this.defesa = this.defesa + defesaPlus;
 	}
 }

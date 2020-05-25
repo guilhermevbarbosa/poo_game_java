@@ -25,6 +25,7 @@ public class VerificaBatalha {
 			if (defendeu == false) {
 				System.out.println(
 						combatente2.getNome() + " de jogador 2 vai receber " + valorAtaque + " de dano");
+				
 				combatente2.receberAtaque(valorAtaque);
 			} else {
 //				Se defendeu, recebe o ataque menos dano
