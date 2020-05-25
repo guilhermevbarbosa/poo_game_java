@@ -32,7 +32,7 @@ public class InputGameSelect {
 		int countJ = 0;
 		deckFormado = new HashMap<Integer, Combatente>();
 
-		while (countJ < 5) {
+		while (countJ < 1) {
 			showOptionsOnInit(p);
 
 //			Capta na próxima linha o Inteiro digitado pelo usuário, esse que determina o combatente selecionado

@@ -6,29 +6,31 @@ import senac.game.sorteios.SorteiosBatalha;
 public class VerificaBatalha {
 
 	SorteiosBatalha sorteiosBatalha = new SorteiosBatalha();
+	VerificaFraquezas verificaFraquezas = new VerificaFraquezas();
 
 //	Realiza a batalha enquanto a classe Batalha solicitar
-	public Combatente batalhar(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
+	public Combatente batalhar(int sorteado, Combatente combatente1, Combatente combatente2)
+			throws InterruptedException {
 		logicaBatalha(sorteado, combatente1, combatente2);
 
 		return getVencedor(combatente1, combatente2);
 	}
 
-	private void logicaBatalha(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
-		System.out.println(combatente1.getArma());
-		System.out.println(combatente2.getArma());
-		
-		//		Se o sorteado for 1 começa por ele, se não começa pelo 2
+	private void logicaBatalha(int sorteado, Combatente combatente1, Combatente combatente2)
+			throws InterruptedException {
+
+		// Se o sorteado for 1 começa por ele, se não começa pelo 2
 		if (sorteado == 1) {
 //			valorAtaque recebe o sorteio da força do ataque de acordo com o sorteio da força de quem vai atacar
 			int valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente1.getForca());
 			boolean defendeu = sorteiosBatalha.sorteiaDefesa();
 
+			verificaFraquezas.verificaTipoAtaque(combatente1, combatente2);
+
 //			Se o adversário não defendeu, recebe dano inteiro
 			if (defendeu == false) {
-				System.out.println(
-						combatente2.getNome() + " de jogador 2 vai receber " + valorAtaque + " de dano");
-				
+				System.out.println(combatente2.getNome() + " de jogador 2 vai receber " + valorAtaque + " de dano");
+
 				combatente2.receberAtaque(valorAtaque);
 			} else {
 //				Se defendeu, recebe o ataque menos dano
@@ -58,8 +60,7 @@ public class VerificaBatalha {
 
 //			Se o adversário não defendeu, recebe dano inteiro
 			if (defendeu == false) {
-				System.out.println(
-						combatente1.getNome() + " de jogador 1 vai receber " + valorAtaque + " de dano");
+				System.out.println(combatente1.getNome() + " de jogador 1 vai receber " + valorAtaque + " de dano");
 				combatente1.receberAtaque(valorAtaque);
 			} else {
 //				Se defendeu, recebe o ataque menos dano
