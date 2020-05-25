@@ -14,8 +14,8 @@ public class VerificaBatalha {
 		return getVencedor(combatente1, combatente2);
 	}
 
-	private void logicaBatalha(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
-//		Se o sorteado for 1 começa por ele, se não começa pelo 2
+	private void logicaBatalha(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {	
+		//		Se o sorteado for 1 começa por ele, se não começa pelo 2
 		if (sorteado == 1) {
 //			valorAtaque recebe o sorteio da força do ataque de acordo com o sorteio da força de quem vai atacar
 			int valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente1.getForca());
@@ -47,7 +47,7 @@ public class VerificaBatalha {
 			System.out.println("A vida de " + combatente1.getNome() + " - " + combatente1.getVidaAtual());
 			System.out.println("A vida de " + combatente2.getNome() + " - " + combatente2.getVidaAtual());
 
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			System.out.println("\n");
 		} else {
 			int valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente2.getForca());
@@ -78,7 +78,7 @@ public class VerificaBatalha {
 			System.out.println("A vida de " + combatente1.getNome() + " - " + combatente1.getVidaAtual());
 			System.out.println("A vida de " + combatente2.getNome() + " - " + combatente2.getVidaAtual());
 
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			System.out.println("\n");
 		}
 	}

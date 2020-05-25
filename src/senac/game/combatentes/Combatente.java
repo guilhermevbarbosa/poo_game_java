@@ -1,5 +1,7 @@
 package senac.game.combatentes;
 
+import senac.game.armaduras.Armadura;
+import senac.game.armas.Arma;
 import senac.game.tipos.Tipo;
 
 public abstract class Combatente {
@@ -7,10 +9,11 @@ public abstract class Combatente {
 	protected String nome;
 	protected int forca;
 	protected int vida;
-
 	protected int defesa;
-
 	protected Tipo tipo;
+
+	Arma arma;
+	Armadura armadura;
 
 	public Combatente(String nome, int forca, int vida, int defesa, Tipo tipo) {
 		this.nome = nome;
@@ -64,13 +67,29 @@ public abstract class Combatente {
 		return this.tipo;
 	}
 
+	public void setArma(Arma arma) {
+		this.arma = arma;
+	}
+
+	public void setArmadura(Armadura armadura) {
+		this.armadura = armadura;
+	}
+	
+	public Arma getArma() {
+		return this.arma;
+	}
+	
+	public Armadura getArmadura() {
+		return this.armadura;
+	}
+
 //	Seta o valor do ataque com o novo valor da arma recebida
-	public void setForcaUpgrade(int forcaPlus) {
-		this.forca = this.forca + forcaPlus;
+	public void setForcaUpgrade() {
+		this.forca = this.forca + this.arma.getValor();
 	}
 
 //	Seta o valor da armadura com o novo valor da armadura
-	public void setDefesaUpgrade(int defesaPlus) {
-		this.defesa = this.defesa + defesaPlus;
+	public void setDefesaUpgrade() {
+		this.defesa = this.defesa + this.armadura.getValor();
 	}
 }
