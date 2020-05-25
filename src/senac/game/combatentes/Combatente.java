@@ -5,9 +5,9 @@ public abstract class Combatente {
 	protected String nome;
 	protected int forca;
 	protected int vida;
-	
-	protected int defesa; 
-	
+
+	protected int defesa;
+
 //	FOGO / NORMAL / GELO / VENENO / FANTASMA
 	protected String tipo;
 
@@ -53,5 +53,13 @@ public abstract class Combatente {
 
 	public int getForca() {
 		return this.forca;
+	}
+	
+	public int getDefesa() {
+		return this.defesa;
+	}
+
+	public String getTipo() {
+		return this.tipo;
 	}
 }

@@ -5,7 +5,7 @@ import senac.game.combatentes.Morcego;
 
 public class SuperMorcego extends Morcego implements Habilidades {
 	public SuperMorcego() {
-		super("Super Morcego", 50, 120, "Normal");
+		super("Super Morcego", 30, 110, "Normal");
 	}
 	
 	@Override

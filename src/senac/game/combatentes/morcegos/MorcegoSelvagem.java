@@ -5,7 +5,7 @@ import senac.game.combatentes.Morcego;
 
 public class MorcegoSelvagem extends Morcego implements Habilidades {
 	public MorcegoSelvagem() {
-		super("Mocego Selvagem", 10, 80, "Veneno");
+		super("Morcego Selvagem", 10, 80, "Veneno");
 	}
 
 	@Override

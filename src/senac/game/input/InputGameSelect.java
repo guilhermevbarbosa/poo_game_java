@@ -13,6 +13,7 @@ public class InputGameSelect {
 	CombatenteFactory combatenteFactory = new CombatenteFactory();
 //	Classe de scanner para captar a digitação do usuário
 	Scanner scanner = new Scanner(System.in);
+	
 //	Criação do Map que vai receber as seleções de combatentes dos usuários 
 	public Map<Integer, Combatente> deckFormado = new HashMap<Integer, Combatente>();
 
@@ -25,15 +26,12 @@ public class InputGameSelect {
 			System.out.print("Jogador " + p + " selecione 5 combatentes para montar o seu deck");
 			System.out.print("\n \n");
 
-			System.out.print(""
-					+ "(1) Arqueiro || " + "(2) Morcego de Gelo || " + "(3) Morcego Selvagem\n \n"
+			System.out.println("" + "(1) Arqueiro || " + "(2) Morcego de Gelo || " + "(3) Morcego Selvagem\n \n"
 					+ "(4) Blood Dragon || " + "(5) Elder Dragon || " + "(6) Orc da Montanha\n \n"
-					+ "(7) Orc do Deserto || " + "(8) Bardo || " + "(9) Ninja\n \n" 
-					+ "(10) Guerreiro || " + "(11) Super Morcego ||" + "(12) Super Orc\n \n"
-					+ "(13) Campones || " + "(14) Ladrao || " + "(15) Wendigo \n \n" 
-					+ "(16) Lobisomem || " + "(17) Ghoul || " + "(18) Espectro \n \n"
-					+ "(19) Centauro || " + "(20) Minotauro"
-					);
+					+ "(7) Orc do Deserto || " + "(8) Bardo || " + "(9) Ninja\n \n" + "(10) Guerreiro || "
+					+ "(11) Super Morcego ||" + "(12) Super Orc\n \n" + "(13) Campones || " + "(14) Ladrao || "
+					+ "(15) Wendigo \n \n" + "(16) Lobisomem || " + "(17) Ghoul || " + "(18) Espectro \n \n"
+					+ "(19) Centauro || " + "(20) Minotauro");
 
 //			Capta na próxima linha o Inteiro digitado pelo usuário, esse que determina o combatente selecionado
 			int valor = scanner.nextInt();
@@ -49,7 +47,8 @@ public class InputGameSelect {
 		return deckFormado;
 	}
 
-//	Método que exibe os combatentes vivos disponíveis para a seleção do usuário e pergunta qual ele quer usar na batalha seguinte
+//	Método que exibe os combatentes vivos disponíveis para a seleção no combate do usuário 
+//	e pergunta qual ele quer usar na batalha seguinte
 	public int inputSelecionarCombatente(int jogador, Map<Integer, Combatente> deck) {
 
 		System.out.print("Jogador " + jogador + " selecione o combatente para batalhar");
@@ -58,7 +57,8 @@ public class InputGameSelect {
 		for (Map.Entry<Integer, Combatente> item : deck.entrySet()) {
 			if (item.getValue().estaVivo()) {
 				System.out.println(item.getKey() + " - " + item.getValue().getNome() + " - Saúde: "
-						+ item.getValue().getVidaAtual() + " - Força: " + item.getValue().getForca());
+						+ item.getValue().getVidaAtual() + " - Força: " + item.getValue().getForca() + " - Defesa: "
+						+ item.getValue().getDefesa() + " - Tipo: " + item.getValue().getTipo());
 			}
 		}
 
