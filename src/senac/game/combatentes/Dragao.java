@@ -5,7 +5,7 @@ import senac.game.tipos.Tipo;
 public abstract class Dragao extends Combatente implements Habilidades {
 
 	public Dragao(String nome, int vida, Tipo tipo) {
-		super(nome, 18, vida, 25, tipo);
+		super(nome, 18, vida, 25, tipo, false);
 	}
 
 	@Override

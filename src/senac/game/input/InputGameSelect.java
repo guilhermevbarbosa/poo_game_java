@@ -32,9 +32,9 @@ public class InputGameSelect {
 		int countJ = 0;
 		deckFormado = new HashMap<Integer, Combatente>();
 
-		showOptionsOnInit(p);
-
 		while (countJ < 5) {
+			showOptionsOnInit(p);
+
 //			Capta na próxima linha o Inteiro digitado pelo usuário, esse que determina o combatente selecionado
 			int valor = scanner.nextInt();
 //			Chama a factory passando o valor digitado
@@ -43,8 +43,10 @@ public class InputGameSelect {
 //			Com a seleção de combatente na factory, pega o Combatente do retorno do Map e dá um put no deck, usando como índice o count do while
 			deckFormado.put(countJ, combatente);
 
+			if (deckFormado.get(countJ).getPodeReceberArmasEArmaduras()) {
 //			Equipa arma e armadura no combatente
-			setArmaEArmadura(countJ);
+				setArmaEArmadura(countJ);
+			}
 
 			countJ++;
 		}
@@ -70,17 +72,20 @@ public class InputGameSelect {
 		deckFormado.get(countJ).setDefesaUpgrade();
 
 		showStatusSelectedCombatente(countJ);
+
 	}
 
+//	Mostra força e armadura original e os novos equipamentos
 	private void showStatusSelectedCombatente(int countJ) {
-		System.out.println("\n" + deckFormado.get(countJ).getNome() + " recebeu a arma " + deckFormado.get(countJ).getArma().getNome()
-				+ " de ataque " + deckFormado.get(countJ).getArma().getValor() + " de tipo "
-				+ deckFormado.get(countJ).getArmaTipo() + "\n");
+		System.out.println("\n" + deckFormado.get(countJ).getNome() + " recebeu a arma "
+				+ deckFormado.get(countJ).getArma().getNome() + " de ataque "
+				+ deckFormado.get(countJ).getArma().getValor() + " de tipo " + deckFormado.get(countJ).getArmaTipo()
+				+ "\n");
 
-		System.out.println(
-				deckFormado.get(countJ).getNome() + " recebeu a armadura " + deckFormado.get(countJ).getArmadura().getNome()
-						+ " de defesa " + deckFormado.get(countJ).getArmadura().getValor() + " de tipo "
-						+ deckFormado.get(countJ).getArmaduraTipo() + "\n \n");
+		System.out.println(deckFormado.get(countJ).getNome() + " recebeu a armadura "
+				+ deckFormado.get(countJ).getArmadura().getNome() + " de defesa "
+				+ deckFormado.get(countJ).getArmadura().getValor() + " de tipo "
+				+ deckFormado.get(countJ).getArmaduraTipo() + "\n \n");
 
 		System.out.println("Ataque original - " + deckFormado.get(countJ).getForcaOriginal() + " | "
 				+ "Ataque com a arma - " + deckFormado.get(countJ).getForca() + "\n");

@@ -14,11 +14,12 @@ public abstract class Combatente {
 
 	protected int forcaOriginal;
 	protected int defesaOriginal;
+	protected boolean podeReceberArmasEArmadura;
 
 	Arma arma;
 	Armadura armadura;
 
-	public Combatente(String nome, int forca, int vida, int defesa, Tipo tipo) {
+	public Combatente(String nome, int forca, int vida, int defesa, Tipo tipo, boolean podeReceberArmasEArmadura) {
 		this.nome = nome;
 		this.forca = forca;
 		this.vida = vida;
@@ -27,6 +28,7 @@ public abstract class Combatente {
 
 		this.forcaOriginal = forca;
 		this.defesaOriginal = defesa;
+		this.podeReceberArmasEArmadura = podeReceberArmasEArmadura;
 	}
 
 	public int getForcaOriginal() {
@@ -113,5 +115,9 @@ public abstract class Combatente {
 //	Seta o valor da armadura com o novo valor da armadura
 	public void setDefesaUpgrade() {
 		this.defesa = this.defesa + this.armadura.getValor();
+	}
+
+	public boolean getPodeReceberArmasEArmaduras() {
+		return podeReceberArmasEArmadura;
 	}
 }
