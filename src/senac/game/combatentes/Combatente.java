@@ -1,5 +1,7 @@
 package senac.game.combatentes;
 
+import senac.game.tipos.Tipo;
+
 public abstract class Combatente {
 
 	protected String nome;
@@ -8,10 +10,9 @@ public abstract class Combatente {
 
 	protected int defesa;
 
-//	FOGO / NORMAL / GELO / VENENO / FANTASMA
-	protected String tipo;
+	protected Tipo tipo;
 
-	public Combatente(String nome, int forca, int vida, int defesa, String tipo) {
+	public Combatente(String nome, int forca, int vida, int defesa, Tipo tipo) {
 		this.nome = nome;
 		this.forca = forca;
 		this.vida = vida;
@@ -59,7 +60,7 @@ public abstract class Combatente {
 		return this.defesa;
 	}
 
-	public String getTipo() {
+	public Tipo getTipo() {
 		return this.tipo;
 	}
 }
