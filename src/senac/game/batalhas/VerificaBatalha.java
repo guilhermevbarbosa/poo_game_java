@@ -8,9 +8,13 @@ public class VerificaBatalha {
 	SorteiosBatalha sorteiosBatalha = new SorteiosBatalha();
 
 //	Realiza a batalha enquanto a classe Batalha solicitar
-	public Combatente batalhar(int sorteado, Combatente combatente1, Combatente combatente2)
-			throws InterruptedException {
+	public Combatente batalhar(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
+		logicaBatalha(sorteado, combatente1, combatente2);
 
+		return getVencedor(combatente1, combatente2);
+	}
+
+	private void logicaBatalha(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
 //		Se o sorteado for 1 começa por ele, se não começa pelo 2
 		if (sorteado == 1) {
 //			valorAtaque recebe o sorteio da força do ataque de acordo com o sorteio da força de quem vai atacar
@@ -76,8 +80,6 @@ public class VerificaBatalha {
 			Thread.sleep(1000);
 			System.out.println("\n");
 		}
-
-		return getVencedor(combatente1, combatente2);
 	}
 
 	private Combatente getVencedor(Combatente combatente1, Combatente combatente2) {
