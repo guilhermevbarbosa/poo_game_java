@@ -4,6 +4,6 @@ import senac.game.tipos.Tipo;
 
 public class JoiaNormal extends Joia {
 	public JoiaNormal() {
-		super("Joia Normal", Tipo.NORMAL, 3, 0);
+		super("Joia Normal", Tipo.NORMAL, 4, 0);
 	}
 }

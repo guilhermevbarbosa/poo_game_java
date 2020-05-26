@@ -2,6 +2,7 @@ package senac.game.combatentes;
 
 import senac.game.armaduras.Armadura;
 import senac.game.armas.Arma;
+import senac.game.joias.Joia;
 import senac.game.tipos.Tipo;
 
 public abstract class Combatente {
@@ -18,6 +19,7 @@ public abstract class Combatente {
 
 	Arma arma;
 	Armadura armadura;
+	Joia joia;
 
 	public Combatente(String nome, int forca, int vida, int defesa, Tipo tipo, boolean podeReceberArmasEArmadura) {
 		this.nome = nome;
@@ -82,6 +84,10 @@ public abstract class Combatente {
 	public Tipo getTipo() {
 		return this.tipo;
 	}
+	
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
 
 	public void setArma(Arma arma) {
 		this.arma = arma;
@@ -93,6 +99,14 @@ public abstract class Combatente {
 
 	public Arma getArma() {
 		return this.arma;
+	}
+	
+	public void setJoia(Joia joia) {
+		this.joia = joia;
+	}
+	
+	public Joia getJoia() {
+		return this.joia;
 	}
 
 	public Tipo getArmaTipo() {
@@ -111,10 +125,34 @@ public abstract class Combatente {
 	public void setForcaUpgrade() {
 		this.forca = this.forca + this.arma.getValor();
 	}
+	
+	public void setForcaJoia(int upgrade) {
+		this.forca = this.forca + upgrade;
+	}
+	
+	public void removeForcaJoia(int downgrade) {
+		this.forca = this.forca - downgrade;
+		
+		if(this.forca < 0) {
+			this.forca = 0;
+		}
+	}
 
 //	Seta o valor da armadura com o novo valor da armadura
 	public void setDefesaUpgrade() {
 		this.defesa = this.defesa + this.armadura.getValor();
+	}
+	
+	public void setDefesaJoia(int upgrade) {
+		this.defesa = this.defesa + upgrade;
+	}
+	
+	public void removeDefesaJoia(int downgrade) {
+		this.defesa = this.defesa - downgrade;
+		
+		if(this.defesa < 0) {
+			this.defesa = 0;
+		}
 	}
 
 	public boolean getPodeReceberArmasEArmaduras() {

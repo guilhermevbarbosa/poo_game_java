@@ -42,4 +42,14 @@ public class SorteiosBatalha {
 
 		return armaSorteado;
 	}
+	
+	public int sorteiaJoias() {
+		int joiaSorteada = rand.nextInt(9);
+
+		if (joiaSorteada == 0) {
+			return joiaSorteada = 1;
+		}
+
+		return joiaSorteada;
+	}
 }

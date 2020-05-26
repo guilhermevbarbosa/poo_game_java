@@ -10,6 +10,8 @@ import senac.game.combatentes.Combatente;
 import senac.game.factories.ArmaduraFactory;
 import senac.game.factories.ArmasFactory;
 import senac.game.factories.CombatenteFactory;
+import senac.game.factories.JoiasFactory;
+import senac.game.joias.Joia;
 import senac.game.sorteios.SorteiosBatalha;
 
 public class InputGameSelect {
@@ -20,6 +22,7 @@ public class InputGameSelect {
 //	Instancia da factory de armas e armaduras, que serve para pegar o random dos dois
 	ArmasFactory armasFactory = new ArmasFactory();
 	ArmaduraFactory armaduraFactory = new ArmaduraFactory();
+	JoiasFactory joiaFactory = new JoiasFactory();
 
 //	Classe de scanner para captar a digitação do usuário
 	Scanner scanner = new Scanner(System.in);
@@ -32,7 +35,7 @@ public class InputGameSelect {
 		int countJ = 0;
 		deckFormado = new HashMap<Integer, Combatente>();
 
-		while (countJ < 1) {
+		while (countJ < 5) {
 			showOptionsOnInit(p);
 
 //			Capta na próxima linha o Inteiro digitado pelo usuário, esse que determina o combatente selecionado
@@ -47,6 +50,9 @@ public class InputGameSelect {
 //			Equipa arma e armadura no combatente
 				setArmaEArmadura(countJ);
 			}
+
+//			Sorteia e equipa a jóia
+			setJoias(countJ);
 
 			countJ++;
 		}
@@ -70,9 +76,36 @@ public class InputGameSelect {
 
 		deckFormado.get(countJ).setForcaUpgrade();
 		deckFormado.get(countJ).setDefesaUpgrade();
-
+		
 		showStatusSelectedCombatente(countJ);
+	}
 
+	private void setJoias(int countJ) {
+		SorteiosBatalha sorteioClass = new SorteiosBatalha();
+
+		int sortJoia = sorteioClass.sorteiaJoias();
+		Joia joiaSorteada = joiaFactory.selecionarJoia(sortJoia);
+		deckFormado.get(countJ).setJoia(joiaSorteada);
+
+		if (joiaSorteada.getVantagem() == 0) {
+			deckFormado.get(countJ).setForcaJoia(joiaSorteada.getValor());
+		} else if (joiaSorteada.getVantagem() == 1) {
+			deckFormado.get(countJ).setDefesaJoia(joiaSorteada.getValor());
+		} else if (joiaSorteada.getVantagem() == 3) {
+			if (deckFormado.get(countJ).getPodeReceberArmasEArmaduras()) {
+				deckFormado.get(countJ).getArma().setTipo(joiaSorteada.getTipo());
+			} else {
+				deckFormado.get(countJ).setTipo(joiaSorteada.getTipo());
+			}
+		} else {
+			if (deckFormado.get(countJ).getPodeReceberArmasEArmaduras()) {
+				deckFormado.get(countJ).getArmadura().setTipo(joiaSorteada.getTipo());
+			} else {
+				deckFormado.get(countJ).setTipo(joiaSorteada.getTipo());
+			}
+		}
+		
+		showStatusJoiasCombatente(countJ);
 	}
 
 //	Mostra força e armadura original e os novos equipamentos
@@ -85,13 +118,31 @@ public class InputGameSelect {
 		System.out.println(deckFormado.get(countJ).getNome() + " recebeu a armadura "
 				+ deckFormado.get(countJ).getArmadura().getNome() + " de defesa "
 				+ deckFormado.get(countJ).getArmadura().getValor() + " de tipo "
-				+ deckFormado.get(countJ).getArmaduraTipo() + "\n \n");
-
-		System.out.println("Ataque original - " + deckFormado.get(countJ).getForcaOriginal() + " | "
-				+ "Ataque com a arma - " + deckFormado.get(countJ).getForca() + "\n");
-		System.out.println("Defesa original - " + deckFormado.get(countJ).getDefesaOriginal() + " | "
-				+ "Defesa com a armadura - " + deckFormado.get(countJ).getDefesa() + "\n \n");
+				+ deckFormado.get(countJ).getArmaduraTipo() + "\n");
 	}
+	
+	private void showStatusJoiasCombatente(int countJ) {
+		String vantagem;
+
+		if (deckFormado.get(countJ).getJoia().getVantagem() == 0) {
+			vantagem = "Ataque";
+		} else if (deckFormado.get(countJ).getJoia().getVantagem() == 1) {
+			vantagem = "Defesa";
+		} else if (deckFormado.get(countJ).getJoia().getVantagem() == 3) {
+			vantagem = "Alteração do tipo Defesa";
+		} else {
+			vantagem = "Alteração do tipo Ataque";
+		}
+
+		System.out.println("\n" + deckFormado.get(countJ).getNome() + " recebeu "
+				+ deckFormado.get(countJ).getJoia().getNome() + " e tem efeito de " + vantagem + "\n\n");
+
+		System.out.println("Ataque original - " + deckFormado.get(countJ).getForcaOriginal() + " | " + "Ataque atual - "
+				+ deckFormado.get(countJ).getForca() + "\n");
+		System.out.println("Defesa original - " + deckFormado.get(countJ).getDefesaOriginal() + " | "
+				+ "Defesa atual - " + deckFormado.get(countJ).getDefesa() + "\n \n");
+	}
+
 
 //	Input de escolha dos combatentes para o deck do usuário
 	private void showOptionsOnInit(int actualPlayer) {
@@ -119,7 +170,7 @@ public class InputGameSelect {
 			if (item.getValue().estaVivo()) {
 				System.out.println(item.getKey() + " - " + item.getValue().getNome() + " - Saúde: "
 						+ item.getValue().getVidaAtual() + " - Força: " + item.getValue().getForca() + " - Defesa: "
-						+ item.getValue().getDefesa() + " - Tipo: " + item.getValue().getTipo());
+						+ item.getValue().getDefesa());
 			}
 		}
 

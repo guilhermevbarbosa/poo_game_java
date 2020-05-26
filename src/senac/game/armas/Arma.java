@@ -25,4 +25,8 @@ public abstract class Arma {
 	public Tipo getTipo() {
 		return this.tipo;
 	}
+	
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
 }
