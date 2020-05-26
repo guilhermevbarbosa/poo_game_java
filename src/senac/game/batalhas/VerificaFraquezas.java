@@ -1,26 +1,9 @@
 package senac.game.batalhas;
-
-import senac.game.combatentes.Combatente;
 import senac.game.tipos.Tipo;
 
 public class VerificaFraquezas {
 
-	public double verificaTipoAtaque(Combatente atacante, Combatente defensor) {
-		Tipo atacanteTipo;
-		Tipo defensorTipo;
-
-		if (atacante.getPodeReceberArmasEArmaduras()) {
-			atacanteTipo = atacante.getArma().getTipo();
-		} else {
-			atacanteTipo = atacante.getTipo();
-		}
-
-		if (defensor.getPodeReceberArmasEArmaduras()) {
-			defensorTipo = defensor.getArmadura().getTipo();
-		} else {
-			defensorTipo = defensor.getTipo();
-		}
-
+	public double verificaTipoAtaque(Tipo atacanteTipo, Tipo defensorTipo) {
 //		GELO x NORMAL
 		if (atacanteTipo.equals(Tipo.GELO) && defensorTipo.equals(Tipo.NORMAL)) {
 			return 1.1;
@@ -58,7 +41,7 @@ public class VerificaFraquezas {
 
 //		VENENO x GELO
 		if (atacanteTipo.equals(Tipo.VENENO) && defensorTipo.equals(Tipo.GELO)) {
-			return 1.2;
+			return 0.5;
 		}
 
 //		FANTASMA x NORMAL
@@ -68,7 +51,7 @@ public class VerificaFraquezas {
 
 //		FANTASMA x FOGO
 		if (atacanteTipo.equals(Tipo.FANTASMA) && defensorTipo.equals(Tipo.FOGO)) {
-			return 1.2;
+			return 0.5;
 		}
 
 		return 1;

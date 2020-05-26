@@ -2,6 +2,7 @@ package senac.game.batalhas;
 
 import senac.game.combatentes.Combatente;
 import senac.game.sorteios.SorteiosBatalha;
+import senac.game.tipos.Tipo;
 
 public class VerificaBatalha {
 
@@ -22,10 +23,19 @@ public class VerificaBatalha {
 		// Se o sorteado for 1 começa por ele, se não começa pelo 2
 		if (sorteado == 1) {
 //			valorAtaque recebe o sorteio da força do ataque de acordo com o sorteio da força de quem vai atacar
-			int valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente1.getForca());
+			double valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente1.getForca());
 			boolean defendeu = sorteiosBatalha.sorteiaDefesa();
 
-			verificaFraquezas.verificaTipoAtaque(combatente1, combatente2);
+//			Realiza a verificação de tipos na batalha
+			Tipo ataqueTipo = handleAtaque(combatente1);
+			Tipo defesaTipo = handleDefesa(combatente2);
+
+			double modificadorFraqueza = verificaFraquezas.verificaTipoAtaque(ataqueTipo, defesaTipo);
+			valorAtaque = valorAtaque * modificadorFraqueza;
+
+			System.out.println("O jogador 1 vai atacar com um ataque do tipo " + ataqueTipo
+					+ " contra uma defesa do tipo " + defesaTipo
+					+ " com isso, houve um modificador de multiplicação de " + modificadorFraqueza);
 
 //			Se o adversário não defendeu, recebe dano inteiro
 			if (defendeu == false) {
@@ -34,7 +44,7 @@ public class VerificaBatalha {
 				combatente2.receberAtaque(valorAtaque);
 			} else {
 //				Se defendeu, recebe o ataque menos dano
-				int ataqueMenosDefesa = valorAtaque - combatente2.getDefesa();
+				double ataqueMenosDefesa = valorAtaque - combatente2.getDefesa();
 
 				if (ataqueMenosDefesa < 0) {
 					ataqueMenosDefesa = 0;
@@ -55,8 +65,19 @@ public class VerificaBatalha {
 			Thread.sleep(500);
 			System.out.println("\n");
 		} else {
-			int valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente2.getForca());
+			double valorAtaque = sorteiosBatalha.sorteiaAtaque(combatente2.getForca());
 			boolean defendeu = sorteiosBatalha.sorteiaDefesa();
+
+//			Realiza a verificação de tipos na batalha
+			Tipo ataqueTipo = handleAtaque(combatente2);
+			Tipo defesaTipo = handleDefesa(combatente1);
+
+			double modificadorFraqueza = verificaFraquezas.verificaTipoAtaque(ataqueTipo, defesaTipo);
+			valorAtaque = valorAtaque * modificadorFraqueza;
+			
+			System.out.println("O jogador 2 vai atacar com um ataque do tipo " + ataqueTipo
+					+ " contra uma defesa do tipo " + defesaTipo
+					+ " com isso, houve um modificador de multiplicação de " + modificadorFraqueza);
 
 //			Se o adversário não defendeu, recebe dano inteiro
 			if (defendeu == false) {
@@ -64,7 +85,7 @@ public class VerificaBatalha {
 				combatente1.receberAtaque(valorAtaque);
 			} else {
 //				Se defendeu, recebe o ataque menos dano
-				int ataqueMenosDefesa = valorAtaque - combatente1.getDefesa();
+				double ataqueMenosDefesa = valorAtaque - combatente1.getDefesa();
 
 				if (ataqueMenosDefesa < 0) {
 					ataqueMenosDefesa = 0;
@@ -84,6 +105,22 @@ public class VerificaBatalha {
 
 			Thread.sleep(500);
 			System.out.println("\n");
+		}
+	}
+
+	private Tipo handleAtaque(Combatente atacante) {
+		if (atacante.getPodeReceberArmasEArmaduras()) {
+			return atacante.getArma().getTipo();
+		} else {
+			return atacante.getTipo();
+		}
+	}
+
+	private Tipo handleDefesa(Combatente defensor) {
+		if (defensor.getPodeReceberArmasEArmaduras()) {
+			return defensor.getArmadura().getTipo();
+		} else {
+			return defensor.getTipo();
 		}
 	}
 
