@@ -61,3 +61,28 @@ Jóias
 (7) Joia de Gelo - GELO - Altera o ataque para o tipo GELO <br>
 (8) Joia Normal - NORMAL - Altera o ataque para o tipo NORMAL <br>
 (9) Joia Venenosa - VENENO - Altera o ataque para o tipo VENENO <br>
+
+
+Armaduras
+======
+
+(1) Bota de Bronze - 10 de defesa - Tipo NORMAL <br>
+(2) Bota Fantasma - 45 de defesa - Tipo FANTASMA <br>
+(3) Bota de Fogo - 45 de defesa - Tipo FOGO <br>
+(4) Bota de Gelo - 45 de defesa - Tipo GELO <br>
+(5) Bota de Ouro - 30 de defesa - Tipo NORMAL <br>
+(6) Calca de Bronze - 10 de defesa - Tipo NORMAL <br>
+(7) Calca Fantasma - 45 de defesa - Tipo FANTASMA <br>
+(8) Calca de Fogo - 45 de defesa - Tipo FOGO <br>
+(9) Calca de Gelo - 45 de defesa - Tipo GELO <br>
+(10) Calca de Ouro - 30 de defesa - Tipo NORMAL <br>
+(11) Capacete de Bronze - 10 de defesa - Tipo NORMAL <br>
+(12) Capacete Fantasma - 45 de defesa - Tipo FANTASMA <br>
+(13) Capacete de Fogo - 45 de defesa - Tipo FOGO <br>
+(14) Capacete de Gelo - 45 de defesa - Tipo GELO <br>
+(15) Capacete de Ouro - 30 de defesa - Tipo NORMAL <br>
+(16) Peitoral de Bronze - 10 de defesa - Tipo NORMAL <br>
+(17) Peitoral Fantasma - 45 de defesa - Tipo FANTASMA <br>
+(18) Peitoral de Fogo - 45 de defesa - Tipo FOGO <br>
+(19) Peitoral de Gelo - 45 de defesa - Tipo GELO <br>
+(20) Peitoral de Ouro - 30 de defesa - Tipo NORMAL <br>
