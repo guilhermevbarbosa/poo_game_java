@@ -111,7 +111,6 @@ Armas
 (19) Martelo Fantasma - 40 de ataque - Tipo FANTASMA <br>
 (20) Martelo Flamejante - 40 de ataque - Tipo FOGO <br>
 
-
 Diagramas de classe
 ======
 
@@ -135,3 +134,10 @@ Combatentes - <br>
 ![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/combatentes.svg "Armas")
 
 [PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/combatentes.pdf)
+
+Diagrama de sequência
+======
+
+![alt text](https://raw.githubusercontent.com/guilhermevbarbosa/poo_game_java/39e70d939386d94bf480912297b42660214322f7/Diagramas/Diagrama%20de%20sequencia/Diagrama%20de%20Sequ%C3%AAncia.svg)
+
+[PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagrama%20de%20sequencia/Diagrama%20de%20Sequ%C3%AAncia.pdf)
