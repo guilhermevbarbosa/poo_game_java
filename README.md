@@ -86,3 +86,27 @@ Armaduras
 (18) Peitoral de Fogo - 45 de defesa - Tipo FOGO <br>
 (19) Peitoral de Gelo - 45 de defesa - Tipo GELO <br>
 (20) Peitoral de Ouro - 30 de defesa - Tipo NORMAL <br>
+
+Armas
+======
+
+(1) Adaga Congelante - 20 de ataque - Tipo GELO <br>
+(2) Adaga Cortante - 20 de ataque - Tipo NORMAL <br>
+(3) Adaga Fantasma - 20 de ataque - Tipo FANTASMA <br>
+(4) Adaga Flamejante - 20 de ataque - Tipo FOGO <br>
+(5) Clava Congelante - 25 de ataque - Tipo GELO <br>
+(6) Clava Envenenada - 25 de ataque - Tipo VENENO <br>
+(7) Clava Fantasma - 25 de ataque - Tipo FANTASMA <br>
+(8) Clava Flamejante - 25 de ataque - Tipo FOGO <br>
+(9) Espada Congelante - 30 de ataque - Tipo GELO <br>
+(10) Espada Envenenada - 30 de ataque - Tipo VENENO <br>
+(11) Espada Fantasma - 30 de ataque - Tipo FANTASMA <br>
+(12) Espada Flamejante - 30 de ataque - Tipo FOGO <br>
+(13) Espada Nórdica - 30 de ataque - Tipo NORMAL <br>
+(14) Machado Congelante - 35 de ataque - Tipo GELO <br>
+(15) Machado Cortante - 35 de ataque - Tipo NORMAL <br>
+(16) Machado Fantasma - 35 de ataque - Tipo FANTASMA <br>
+(17) Martelo Congelante - 40 de ataque - Tipo GELO <br>
+(18) Martelo Esmagador - 40 de ataque - Tipo NORMAL <br>
+(19) Martelo Fantasma - 40 de ataque - Tipo FANTASMA <br>
+(20) Martelo Flamejante - 40 de ataque - Tipo FOGO <br>
