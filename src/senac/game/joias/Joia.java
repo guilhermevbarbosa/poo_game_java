@@ -4,11 +4,11 @@ import senac.game.tipos.Tipo;
 
 public class Joia {
 
-	String nome;
-	Tipo tipo;
+	protected String nome;
+	protected Tipo tipo;
 //	0 - Ataque / 1 - Defesa / 3 - Tipo defesa / 4 - Tipo ataque
-	int vantagem;
-	int valor;
+	protected int vantagem;
+	protected int valor;
 
 	public Joia(String nome, Tipo tipo, int vantagem, int valor) {
 		this.nome = nome;
