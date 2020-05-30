@@ -17,9 +17,9 @@ public abstract class Combatente {
 	protected int defesaOriginal;
 	protected boolean podeReceberArmasEArmadura;
 
-	Arma arma;
-	Armadura armadura;
-	Joia joia;
+	protected Arma arma;
+	protected Armadura armadura;
+	protected Joia joia;
 
 	public Combatente(String nome, int forca, int vida, int defesa, Tipo tipo, boolean podeReceberArmasEArmadura) {
 		this.nome = nome;
