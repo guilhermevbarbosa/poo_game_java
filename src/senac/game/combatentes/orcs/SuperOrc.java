@@ -5,6 +5,6 @@ import senac.game.tipos.Tipo;
 
 public class SuperOrc extends Orc {
 	public SuperOrc() {
-		super("SuperOrc", 50, Tipo.NORMAL);
+		super("Super Orc", 50, Tipo.NORMAL);
 	}
 }
