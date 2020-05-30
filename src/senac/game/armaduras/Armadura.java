@@ -4,9 +4,9 @@ import senac.game.tipos.Tipo;
 
 public abstract class Armadura {
 	
-	String nome;
-	int valor;
-	Tipo tipo;
+	protected String nome;
+	protected int valor;
+	protected Tipo tipo;
 	
 	public Armadura(String nome, int valor, Tipo tipo) {
 		this.nome = nome;
