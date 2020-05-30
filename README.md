@@ -48,3 +48,16 @@ Combatentes
 (28) Dragão Venenoso<br>
 (29) Dragão Fantasma<br>
 (30) Golem de Gelo<br>
+
+Jóias
+======
+
+(1) Joia de Ataque da Fraqueza - NORMAL - Diminui o ataque em -20 <br>
+(2) Joia de Ataque da Sorte - NORMAL - Aumenta o ataque em +20 <br>
+(3) Joia de Defesa da Fraqueza - NORMAL - Diminui a defesa em -20 <br>
+(4) Joia de Defesa da Sorte - NORMAL - Aumenta a defesa em +20 <br>
+(5) Joia Fantasma - FANTASMA - Altera a defesa para o tipo FANTASMA <br>
+(6) Joia de Fogo - FOGO - Altera a defesa para o tipo FOGO <br>
+(7) Joia de Gelo - GELO - Altera o ataque para o tipo GELO <br>
+(8) Joia Normal - NORMAL - Altera o ataque para o tipo NORMAL <br>
+(9) Joia Venenosa - VENENO - Altera o ataque para o tipo VENENO <br>
