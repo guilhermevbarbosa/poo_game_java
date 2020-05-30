@@ -8,7 +8,7 @@ Game desenvolvido em Java para a aula de POO
 <b>1</b> - Abra o jogo no <i>Eclipse</i> e inicie.<br><br>
 <b>2</b> - Com o jogo iniciado, <i>jogador 1</i> selecione 5 combatentes para o seu deck.<br><br>
 <b>3</b> - <i>Jogador 2</i> selecione 5 combatentes para o seu deck.<br><br>
-<b>4</b> - A cada combatente selecionado, uma arma, armadura e jóia e sorteada para cada jogador.<br><br>
+<b>4</b> - A cada combatente selecionado, uma arma, armadura e jóia é sorteada para cada jogador.<br><br>
 <b>*Combatentes voadores não podem equipar equipamentos, apenas jóias</b><br><br>
 <b>4</b> - Para a batalha iniciar, será solicitado para que o <i>jogador 1</i> escolha um personagem para batalhar, logo depois o <i>jogador 2</i>.<br><br>
 <b>5</b> - Ocorre o sorteio da ordem de ataque.<br><br>
