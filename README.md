@@ -110,3 +110,28 @@ Armas
 (18) Martelo Esmagador - 40 de ataque - Tipo NORMAL <br>
 (19) Martelo Fantasma - 40 de ataque - Tipo FANTASMA <br>
 (20) Martelo Flamejante - 40 de ataque - Tipo FOGO <br>
+
+
+Diagramas de classe
+======
+
+Armas - <br>
+![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Arma.svg "Armas")
+
+[PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Arma.pdf)
+
+
+Armaduras - <br>
+![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Armadura.svg "Armas")
+
+[PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Armadura.pdf)
+
+Joias - <br>
+![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Joias.svg "Armas")
+
+[PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Joias.pdf)
+
+Combatentes - <br>
+![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/combatentes.svg "Armas")
+
+[PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/combatentes.pdf)
