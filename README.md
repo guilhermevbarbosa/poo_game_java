@@ -115,23 +115,23 @@ Diagramas de classe
 ======
 
 Armas - <br>
-![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Arma.svg "Armas")
+![alt text](https://raw.githubusercontent.com/guilhermevbarbosa/poo_game_java/1a3841971faa08b868ca4acbe1dac1e288c4bc5e/Diagramas/Diagramas%20de%20classes/Arma.svg "Armas")
 
 [PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Arma.pdf)
 
 
 Armaduras - <br>
-![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Armadura.svg "Armas")
+![alt text](https://raw.githubusercontent.com/guilhermevbarbosa/poo_game_java/1a3841971faa08b868ca4acbe1dac1e288c4bc5e/Diagramas/Diagramas%20de%20classes/Armadura.svg "Armas")
 
 [PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Armadura.pdf)
 
 Joias - <br>
-![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Joias.svg "Armas")
+![alt text](https://raw.githubusercontent.com/guilhermevbarbosa/poo_game_java/1a3841971faa08b868ca4acbe1dac1e288c4bc5e/Diagramas/Diagramas%20de%20classes/Joias.svg "Joias")
 
 [PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/Joias.pdf)
 
 Combatentes - <br>
-![alt text](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/combatentes.svg "Armas")
+![alt text](https://raw.githubusercontent.com/guilhermevbarbosa/poo_game_java/1a3841971faa08b868ca4acbe1dac1e288c4bc5e/Diagramas/Diagramas%20de%20classes/combatentes.svg "Combatentes")
 
 [PDF](https://github.com/guilhermevbarbosa/poo_game_java/blob/master/Diagramas/Diagramas%20de%20classes/combatentes.pdf)
 
