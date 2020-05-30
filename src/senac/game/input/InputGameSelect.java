@@ -76,7 +76,7 @@ public class InputGameSelect {
 
 		deckFormado.get(countJ).setForcaUpgrade();
 		deckFormado.get(countJ).setDefesaUpgrade();
-		
+
 		showStatusSelectedCombatente(countJ);
 	}
 
@@ -104,7 +104,7 @@ public class InputGameSelect {
 				deckFormado.get(countJ).setTipo(joiaSorteada.getTipo());
 			}
 		}
-		
+
 		showStatusJoiasCombatente(countJ);
 	}
 
@@ -120,7 +120,7 @@ public class InputGameSelect {
 				+ deckFormado.get(countJ).getArmadura().getValor() + " de tipo "
 				+ deckFormado.get(countJ).getArmaduraTipo() + "\n");
 	}
-	
+
 	private void showStatusJoiasCombatente(int countJ) {
 		String vantagem;
 
@@ -137,15 +137,17 @@ public class InputGameSelect {
 		System.out.println("\n" + deckFormado.get(countJ).getNome() + " recebeu "
 				+ deckFormado.get(countJ).getJoia().getNome() + " e tem efeito de " + vantagem + "\n\n");
 
+		System.out.println("------------ STATUS ------------ \n");
 		System.out.println("Ataque original - " + deckFormado.get(countJ).getForcaOriginal() + " | " + "Ataque atual - "
 				+ deckFormado.get(countJ).getForca() + "\n");
 		System.out.println("Defesa original - " + deckFormado.get(countJ).getDefesaOriginal() + " | "
 				+ "Defesa atual - " + deckFormado.get(countJ).getDefesa() + "\n \n");
+		System.out.println("------------ STATUS ------------ \n");
 	}
-
 
 //	Input de escolha dos combatentes para o deck do usuário
 	private void showOptionsOnInit(int actualPlayer) {
+		System.out.println("-----------------------------------------------------------------");
 		System.out.print("Jogador " + actualPlayer + " selecione 5 combatentes para montar o seu deck");
 		System.out.print("\n \n");
 		System.out.print("Após a escolha, o combatente selecionado receberá 1 arma, 1 armadura e 1 joia. \n");
@@ -156,7 +158,11 @@ public class InputGameSelect {
 				+ "(7) Orc do Deserto || " + "(8) Bardo || " + "(9) Ninja\n \n" + "(10) Guerreiro || "
 				+ "(11) Super Morcego ||" + "(12) Super Orc\n \n" + "(13) Campones || " + "(14) Ladrao || "
 				+ "(15) Wendigo \n \n" + "(16) Lobisomem || " + "(17) Ghoul || " + "(18) Espectro \n \n"
-				+ "(19) Centauro || " + "(20) Minotauro");
+				+ "(19) Centauro || " + "(20) Minotauro || " + "(21) Morcego de Fogo \n \n"
+				+ "(22) Morcego Fantasma || " + "(23) Orc Congelado || " + "(24) Orc Fantasma \n \n"
+				+ "(25) Orc Flamejante || " + "(26) Orc Envenenado || " + "(27) Dragão Comum \n \n"
+				+ "(28) Dragão Venenoso || " + "(29) Dragão Fantasma || " + "(30) Golem de Gelo");
+		System.out.println("-----------------------------------------------------------------");
 	}
 
 //	Método que exibe os combatentes vivos disponíveis para a seleção no combate do usuário 

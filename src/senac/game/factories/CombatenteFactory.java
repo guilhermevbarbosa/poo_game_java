@@ -6,6 +6,7 @@ import senac.game.combatentes.humanos.*;
 import senac.game.combatentes.monstros.Centauro;
 import senac.game.combatentes.monstros.Espectro;
 import senac.game.combatentes.monstros.Ghoul;
+import senac.game.combatentes.monstros.GolemDeGelo;
 import senac.game.combatentes.monstros.Lobisomem;
 import senac.game.combatentes.monstros.Minotauro;
 import senac.game.combatentes.monstros.Wendigo;
@@ -39,6 +40,16 @@ public class CombatenteFactory {
 		deckMap.put(18, new Espectro());
 		deckMap.put(19, new Centauro());
 		deckMap.put(20, new Minotauro());
+		deckMap.put(21, new MorcegoDeFogo());
+		deckMap.put(22, new MorcegoFantasma());
+		deckMap.put(23, new OrcCongelado());
+		deckMap.put(24, new OrcFantasma());
+		deckMap.put(25, new OrcFlamejante());
+		deckMap.put(26, new OrcEnvenenado());
+		deckMap.put(27, new DragaoComum());
+		deckMap.put(28, new DragaoVenenoso());
+		deckMap.put(29, new DragaoFantasma());
+		deckMap.put(30, new GolemDeGelo());
 	}
 
 	public Combatente selecionarCombatente(int valor) {
