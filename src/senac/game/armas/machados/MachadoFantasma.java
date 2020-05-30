@@ -6,7 +6,7 @@ import senac.game.tipos.Tipo;
 public class MachadoFantasma extends Arma {
 
 	public MachadoFantasma() {
-		super("MachadoFantasma", 35, Tipo.FANTASMA);
+		super("Machado Fantasma", 35, Tipo.FANTASMA);
 	}
 
 }
